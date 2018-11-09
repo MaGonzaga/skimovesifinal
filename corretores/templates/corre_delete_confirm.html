@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} Confirmacao  {% endblock %}
+
+{% block main %}
+
+
+<h3>Tem Certeza que deseja Remover  {{corretores.nome}} ?</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+    <button type="submit" class="btn btn-danger">Deletar</button>
+    
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

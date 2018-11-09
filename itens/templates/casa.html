@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %} Administracao {% endblock %}
+
+{% block main %}
+
+
+
+
+
+    <div class="row">
+        <div class="col">
+            
+        </div>
+        <div class="col-6">
+            <h3>Listagem de Imoveis</h3>
+            <ul class="list-group">
+                {% for casas in casas  %}
+                    <li class="list-group-item">
+                        <a href="{% url 'casas_update' casas.id %}">{{ casas.nome}} </a>
+                        <a href="{% url 'casas_delete' casas.id %}" class="trash-item">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                {% endfor %}
+                <br>
+                <a href="{% url 'casas_new' %}" class="btn btn-success"> Novo Imovel</a>
+            </ul>
+        </div>
+        <div class="col">
+        {% if user.is_authenticated %}
+            <p class="btn btn-info"> Ola {{user.username}} </p>
+            <p><a href="{% url 'home' %}" class="btn btn-dark"> Home</a>  </p>
+                
+            <a href="{% url 'logout' %}" class="btn btn-danger">Sair </a> 
+            
+        {% endif %}
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
